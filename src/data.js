@@ -1,0 +1,125 @@
+export const CATEGORIES = ['Electronics', 'Fashion', 'Home & Kitchen', 'Books'];
+
+const p = (id, name, category, price, rating, reviews, icon, color, description, specs, featured = false, stock = 25) => ({
+  id, name, category, price, rating, reviews, icon, color, description, specs, featured, stock,
+});
+
+export const INITIAL_PRODUCTS = [
+  // Electronics
+  p(1, 'Aero Pro Wireless Headphones', 'Electronics', 199.99, 4.7, 1284, '🎧', '#2563eb',
+    'Over-ear headphones with hybrid active noise cancellation, 40-hour battery life and plush memory-foam ear cushions for all-day comfort.',
+    { Battery: '40 hours', Connectivity: 'Bluetooth 5.3', Weight: '254 g', 'Noise Cancelling': 'Hybrid ANC', Warranty: '2 years' }, true),
+  p(2, 'Nova X Smartphone 128GB', 'Electronics', 699, 4.5, 2310, '📱', '#0ea5e9',
+    'A 6.5" AMOLED 120Hz display, triple-lens 50MP camera system and 5,000 mAh battery with 45W fast charging.',
+    { Display: '6.5" AMOLED 120Hz', Storage: '128 GB', RAM: '8 GB', Camera: '50MP + 12MP + 8MP', Battery: '5000 mAh' }, true),
+  p(3, 'PulseFit Smartwatch S2', 'Electronics', 149.5, 4.3, 876, '⌚', '#3b82f6',
+    'Track heart rate, sleep and 100+ workouts with built-in GPS and a bright always-on display. Water resistant to 50 m.',
+    { Display: '1.4" AMOLED', 'Battery Life': '10 days', 'Water Resistance': '5 ATM', GPS: 'Built-in', Sensors: 'HR, SpO2, Accelerometer' }, true),
+  p(4, 'UltraBook Air 14" Laptop', 'Electronics', 1099, 4.6, 642, '💻', '#1d4ed8',
+    'Thin and light 14" laptop with a 2.2K display, latest-gen 12-core processor, 16 GB RAM and a blazing 512 GB NVMe SSD.',
+    { Processor: '12-core 3.8 GHz', RAM: '16 GB', Storage: '512 GB NVMe', Display: '14" 2.2K IPS', Weight: '1.2 kg' }, true),
+  p(5, 'Beat Mini Bluetooth Speaker', 'Electronics', 49.99, 4.4, 3120, '🔊', '#38bdf8',
+    'Pocket-sized speaker with room-filling 360° sound, IP67 waterproofing and 15 hours of playtime.',
+    { Output: '20 W', Battery: '15 hours', Rating: 'IP67', Connectivity: 'Bluetooth 5.2', Weight: '540 g' }),
+  p(6, 'SnapPro Mirrorless Camera', 'Electronics', 849, 4.8, 410, '📷', '#1e40af',
+    '24MP mirrorless camera with 4K video, in-body stabilization and fast hybrid autofocus. Includes 16-50mm kit lens.',
+    { Sensor: '24.2MP APS-C', Video: '4K 30fps', ISO: '100–51200', Stabilization: '5-axis IBIS', Weight: '410 g' }),
+
+  // Fashion
+  p(7, 'Classic Denim Jacket', 'Fashion', 79, 4.4, 534, '🧥', '#2563eb',
+    'A timeless unisex denim jacket in durable stonewashed cotton, with a relaxed fit and copper-toned buttons.',
+    { Material: '100% Cotton Denim', Fit: 'Relaxed', Care: 'Machine wash cold', Sizes: 'XS – XXL', Origin: 'Portugal' }, true),
+  p(8, 'AirStride Running Sneakers', 'Fashion', 119.95, 4.6, 1890, '👟', '#0284c7',
+    'Responsive foam cushioning and a breathable engineered-mesh upper make these sneakers ideal for daily runs.',
+    { Upper: 'Engineered mesh', Sole: 'Rubber + EVA foam', Drop: '8 mm', Weight: '260 g', Use: 'Road running' }, true),
+  p(9, 'Everyday Cotton T-Shirt (3-pack)', 'Fashion', 34.99, 4.2, 2760, '👕', '#60a5fa',
+    'Soft combed-cotton crew neck tees in navy, white and sky blue. Pre-shrunk and built to last wash after wash.',
+    { Material: '100% Combed Cotton', Fit: 'Regular', Pack: '3 pieces', Care: 'Machine wash', Sizes: 'S – XXL' }),
+  p(10, 'Metro Leather Backpack', 'Fashion', 129, 4.5, 388, '🎒', '#1e3a8a',
+    'Full-grain leather backpack with a padded 15" laptop sleeve, water-resistant lining and multiple organiser pockets.',
+    { Material: 'Full-grain leather', Capacity: '22 L', 'Laptop Fit': 'Up to 15"', Pockets: '7', Weight: '1.1 kg' }),
+  p(11, 'Aviator Polarized Sunglasses', 'Fashion', 59, 4.1, 702, '🕶️', '#3b82f6',
+    'Lightweight metal-frame aviators with polarized UV400 lenses that cut glare and protect your eyes.',
+    { Lens: 'Polarized UV400', Frame: 'Stainless steel', Width: '58 mm', Weight: '28 g', Includes: 'Hard case + cloth' }),
+  p(12, 'Merino Wool Scarf', 'Fashion', 45, 4.7, 215, '🧣', '#0ea5e9',
+    'Ultra-soft 100% merino scarf that keeps you warm without the itch. Generously sized for versatile styling.',
+    { Material: '100% Merino wool', Size: '180 × 30 cm', Care: 'Hand wash', Weight: '170 g', Origin: 'Italy' }),
+
+  // Home & Kitchen
+  p(13, 'BrewMaster Coffee Machine', 'Home & Kitchen', 189, 4.6, 934, '☕', '#1d4ed8',
+    'Programmable espresso & drip coffee machine with a built-in grinder, milk frother and 1.8 L removable water tank.',
+    { Pressure: '15 bar', Tank: '1.8 L', Grinder: 'Conical burr', Power: '1450 W', Warranty: '2 years' }, true),
+  p(14, 'CrispAir Digital Air Fryer 5L', 'Home & Kitchen', 99.99, 4.5, 4120, '🍟', '#0284c7',
+    'Cook crispy meals with up to 90% less oil. 8 preset programs, digital touch controls and a dishwasher-safe basket.',
+    { Capacity: '5 L', Power: '1700 W', Presets: '8', Temperature: '80–200 °C', Coating: 'Non-stick' }, true),
+  p(15, 'CloudSoft Memory Foam Pillow', 'Home & Kitchen', 39.9, 4.3, 1560, '🛏️', '#60a5fa',
+    'Contoured memory foam pillow with a cooling gel layer and a removable, washable bamboo cover.',
+    { Fill: 'Memory foam', Cover: 'Bamboo blend', Size: '60 × 40 cm', Care: 'Spot clean foam', Firmness: 'Medium' }),
+  p(16, 'Chef’s Choice Knife Set (6-pc)', 'Home & Kitchen', 84.5, 4.7, 752, '🔪', '#1e40af',
+    'High-carbon stainless steel knives with ergonomic handles, including a chef’s knife, bread knife and wooden block.',
+    { Steel: 'High-carbon stainless', Pieces: '6 + block', Handle: 'Ergonomic POM', Care: 'Hand wash', Warranty: 'Lifetime' }),
+  p(17, 'Lumen Smart LED Desk Lamp', 'Home & Kitchen', 54.99, 4.4, 489, '💡', '#38bdf8',
+    'Dimmable desk lamp with 5 colour temperatures, wireless charging base and USB-A port.',
+    { Brightness: '1000 lm', 'Colour Temp': '2700–6500 K', Charging: '10 W Qi wireless', Power: '12 W', Control: 'Touch + app' }),
+  p(18, 'Terra Ceramic Dinner Set (16-pc)', 'Home & Kitchen', 72, 4.2, 321, '🍽️', '#3b82f6',
+    'Modern reactive-glaze stoneware dinner set for four. Microwave and dishwasher safe.',
+    { Pieces: '16', Material: 'Stoneware', Service: 'For 4', 'Microwave Safe': 'Yes', Finish: 'Reactive glaze' }),
+
+  // Books
+  p(19, 'The Silent Horizon', 'Books', 16.99, 4.6, 2210, '📘', '#2563eb',
+    'A gripping literary thriller about a lighthouse keeper who discovers a message in a bottle that could rewrite a town’s history.',
+    { Author: 'Elena Marsh', Pages: '384', Format: 'Paperback', Publisher: 'Harbor Lane Press', Language: 'English' }, true),
+  p(20, 'Atomic Habits Mastery', 'Books', 19.5, 4.8, 9840, '📗', '#0ea5e9',
+    'A practical, proven framework for building good habits and breaking bad ones, one small change at a time.',
+    { Author: 'Jonas Clarke', Pages: '320', Format: 'Hardcover', Publisher: 'Summit Books', Language: 'English' }, true),
+  p(21, 'Clean Code in Practice', 'Books', 42, 4.7, 1530, '📙', '#1d4ed8',
+    'Real-world techniques for writing readable, maintainable software, with refactoring case studies in modern languages.',
+    { Author: 'Priya Natarajan', Pages: '512', Format: 'Paperback', Publisher: 'CodeCraft', Language: 'English' }),
+  p(22, 'A Brief Tour of the Cosmos', 'Books', 24.99, 4.5, 880, '📕', '#60a5fa',
+    'An illustrated journey from the Big Bang to black holes, explained for curious minds of all ages.',
+    { Author: 'Dr. Amir Haddad', Pages: '288', Format: 'Hardcover', Publisher: 'Orbit & Co.', Language: 'English' }),
+  p(23, 'The Slow Kitchen Cookbook', 'Books', 29.95, 4.4, 640, '📓', '#38bdf8',
+    '120 comforting, seasonal recipes designed for slow cookers and Sunday afternoons, with beautiful photography.',
+    { Author: 'Marta Lindqvist', Pages: '256', Format: 'Hardcover', Publisher: 'Hearth Books', Language: 'English' }),
+  p(24, 'Startup Playbook', 'Books', 22, 4.3, 745, '📔', '#1e3a8a',
+    'Lessons, frameworks and candid stories from founders who built companies from zero to one.',
+    { Author: 'Daniel Okafor', Pages: '304', Format: 'Paperback', Publisher: 'Summit Books', Language: 'English' }),
+];
+
+const REVIEWERS = ['Aarav S.', 'Emily R.', 'Marcus T.', 'Sofia L.', 'Liam O.', 'Priya K.', 'Noah B.', 'Hana M.', 'Carlos D.', 'Grace W.'];
+const REVIEW_TEXTS = [
+  [5, 'Absolutely love it', 'Exceeded my expectations. Great quality and it arrived earlier than promised.'],
+  [5, 'Worth every penny', 'Excellent value for money. I have recommended it to friends and family.'],
+  [4, 'Very good overall', 'Works as described. Only a small nitpick with the packaging, otherwise perfect.'],
+  [4, 'Solid purchase', 'Well made and reliable. Does exactly what I needed it to do.'],
+  [3, 'Decent, not amazing', 'Good for the price but I expected a little more polish in the finish.'],
+  [5, 'Fantastic', 'Top-notch. I use it every day and it still feels brand new.'],
+];
+
+export function getReviews(product) {
+  return Array.from({ length: 3 }, (_, i) => {
+    const [rating, title, text] = REVIEW_TEXTS[(product.id + i * 2) % REVIEW_TEXTS.length];
+    return {
+      id: `${product.id}-${i}`,
+      author: REVIEWERS[(product.id * 3 + i) % REVIEWERS.length],
+      rating, title, text,
+      date: new Date(2025, (product.id + i * 3) % 12, 3 + ((product.id * 5 + i * 7) % 24)).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
+    };
+  });
+}
+
+export const MONTHLY_SALES = [
+  { month: 'Jan', revenue: 18400, orders: 212 }, { month: 'Feb', revenue: 20150, orders: 238 },
+  { month: 'Mar', revenue: 24800, orders: 291 }, { month: 'Apr', revenue: 23100, orders: 270 },
+  { month: 'May', revenue: 27650, orders: 322 }, { month: 'Jun', revenue: 31200, orders: 365 },
+  { month: 'Jul', revenue: 29800, orders: 348 }, { month: 'Aug', revenue: 33500, orders: 391 },
+  { month: 'Sep', revenue: 36900, orders: 430 }, { month: 'Oct', revenue: 41250, orders: 478 },
+  { month: 'Nov', revenue: 52800, orders: 612 }, { month: 'Dec', revenue: 58400, orders: 689 },
+];
+
+export const CATEGORY_SALES = [
+  { category: 'Electronics', sales: 168400 }, { category: 'Fashion', sales: 84200 },
+  { category: 'Home & Kitchen', sales: 92700 }, { category: 'Books', sales: 41800 },
+];
+
+export const money = (n) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
