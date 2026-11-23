@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark">EM</span>
+        <h1>Employee Manager</h1>
+      </div>
+      <div class="header-stats" id="stats" aria-live="polite"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <div class="search-wrap">
+        <input
+          type="search"
+          id="search"
+          placeholder="Search by name, email, or department..."
+          autocomplete="off"
+        />
+      </div>
+      <button id="addBtn" class="btn btn-primary">
+        <span aria-hidden="true">+</span> Add Employee
+      </button>
+    </section>
+
+    <section class="table-wrap" aria-label="Employees">
+      <table id="employeeTable">
+        <thead>
+          <tr>
+            <th data-sort="name" class="sortable">Name</th>
+            <th data-sort="email" class="sortable">Email</th>
+            <th data-sort="department" class="sortable">Department</th>
+            <th data-sort="role" class="sortable">Role</th>
+            <th data-sort="salary" class="sortable">Salary</th>
+            <th class="actions-col">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="employeeRows"></tbody>
+      </table>
+      <p id="emptyState" class="empty-state" hidden>
+        No employees found. Try adjusting your search or
+        <button type="button" id="emptyAddBtn" class="link-btn">add a new employee</button>.
+      </p>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+      <header class="modal-header">
+        <h2 id="modalTitle">Add Employee</h2>
+        <button class="icon-btn" data-close aria-label="Close">×</button>
+      </header>
+      <form id="employeeForm" novalidate>
+        <input type="hidden" id="empId" />
+        <div class="form-row">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" required maxlength="80" autocomplete="name" />
+          <small class="error" data-error-for="name"></small>
+        </div>
+        <div class="form-row">
+          <label for="email">Email *</label>
+          <input type="email" id="email" required maxlength="120" autocomplete="email" />
+          <small class="error" data-error-for="email"></small>
+        </div>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="department">Department *</label>
+            <select id="department" required>
+              <option value="">Select…</option>
+              <option>Engineering</option>
+              <option>Product</option>
+              <option>Design</option>
+              <option>Marketing</option>
+              <option>Sales</option>
+              <option>People</option>
+              <option>Finance</option>
+              <option>Operations</option>
+            </select>
+            <small class="error" data-error-for="department"></small>
+          </div>
+          <div class="form-row">
+            <label for="role">Role *</label>
+            <input type="text" id="role" required maxlength="60" />
+            <small class="error" data-error-for="role"></small>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="salary">Annual Salary (USD)</label>
+          <input type="number" id="salary" min="0" step="1000" placeholder="e.g. 75000" />
+          <small class="error" data-error-for="salary"></small>
+        </div>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
